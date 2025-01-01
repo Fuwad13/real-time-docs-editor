@@ -9,6 +9,7 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import FontFamily from '@tiptap/extension-font-family'
 import TextStyle from '@tiptap/extension-text-style'
+import TextAlign from '@tiptap/extension-text-align'
 import { Color } from '@tiptap/extension-color'
 import Highlight from '@tiptap/extension-highlight'
 import Link from '@tiptap/extension-link'
@@ -19,6 +20,7 @@ import { useEditor, EditorContent } from '@tiptap/react'
 import Underline from '@tiptap/extension-underline';
 
 import { useEditorStore } from '@/store/user-editor-store';
+import { FontSizeExtension } from '@/extensions/font-size';
 
 
 export const Editor = () => {
@@ -58,6 +60,10 @@ export const Editor = () => {
         },
         extensions: [
             StarterKit,
+            FontSizeExtension,
+            TextAlign.configure({
+                types: ["heading", "paragraph"],
+            }),
             Link.configure({
                 openOnClick: false,
                 autolink: true,
