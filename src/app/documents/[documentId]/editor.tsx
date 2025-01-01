@@ -7,6 +7,11 @@ import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
+import FontFamily from '@tiptap/extension-font-family'
+import TextStyle from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
+import Highlight from '@tiptap/extension-highlight'
+import Link from '@tiptap/extension-link'
 // import Dropcursor from '@tiptap/extension-dropcursor'
 import ImageResize from 'tiptap-extension-resize-image'
 import Image from '@tiptap/extension-image'
@@ -53,6 +58,17 @@ export const Editor = () => {
         },
         extensions: [
             StarterKit,
+            Link.configure({
+                openOnClick: false,
+                autolink: true,
+                defaultProtocol: "https",
+            }),
+            Color,
+            Highlight.configure({
+                multicolor: true,
+            }),
+            FontFamily,
+            TextStyle,
             Image,
             ImageResize,
             Table,
