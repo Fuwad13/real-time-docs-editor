@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { SearchIcon, X, XIcon } from "lucide-react";
 import React, { useState, useRef } from "react";
-import { useSearchParam } from "@/hooks/user-search-param";
+import { useSearchParam } from "@/hooks/use-search-param";
 import { set } from "date-fns";
 
 
